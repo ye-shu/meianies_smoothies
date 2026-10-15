@@ -1,3 +1,16 @@
+import streamlit as st
+import os
+
+# 调试：看看 secrets 里到底读了什么
+secrets = st.secrets
+st.write("Secrets keys:", list(secrets.keys()))
+st.write("Account:", secrets.get("account", "NOT FOUND"))
+st.write("User:", secrets.get("user", "NOT FOUND"))
+
+# 原来的连接代码
+cnx = st.connection("snowflake")
+
+
 # Import python packages
 import streamlit as st
 #from snowflake.snowpark.context import get_active_session
